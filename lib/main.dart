@@ -9,7 +9,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MyHomePage(title: 'Interactive Story');
+    return Container(
+      child: MaterialApp(
+        home: MyHomePage(title: 'Interactive Story'),
+      ),
+    );
   }
 }
 
@@ -33,21 +37,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Interactive Stories'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            FlatButton(
-              color: Colors.red,
-              child: Text('A Day in Space'),
-              onPressed: () async {
-                await Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => A_Day_in_Space()//place calculator link
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              TextButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 ),
-                );
-              },
-            ),
-          ],
-        ),
+                child: Text('A Day in Space', style: TextStyle(color: Colors.black, fontSize: 20)),
+                onPressed: () async {
+                  await Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => A_Day_in_Space()//place calculator link
+                  ),
+                  );
+                },
+              ),
+            ],
+          ),
+        )
       ),
     );
   }
