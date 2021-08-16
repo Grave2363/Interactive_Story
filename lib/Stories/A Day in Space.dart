@@ -9,6 +9,14 @@ class A_Day_in_Space extends StatefulWidget {
 
 class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
   int score = 0;
+  String display = '';
+  String choice_A = '';
+  String choice_B = '';
+  String choice_C = '';
+  _choice_made()
+  {
+    //todo
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
