@@ -26,7 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('A Day in Space', style: TextStyle(color: Colors.black, fontSize: 20)),
                 onPressed: () async {
                   await Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => A_Day_in_Space()//place calculator link
+                      builder: (context) => A_Day_in_Space()
                   ),
                   );
                 },

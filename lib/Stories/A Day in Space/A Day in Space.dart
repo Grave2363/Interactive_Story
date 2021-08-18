@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:interactive_story/Stories/A%20Day%20in%20Space/SpaceChoice1.dart';
 
 class A_Day_in_Space extends StatefulWidget {
   const A_Day_in_Space({Key? key}) : super(key: key);
@@ -8,14 +9,15 @@ class A_Day_in_Space extends StatefulWidget {
 }
 
 class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
-  int score = 0;
-  String display = '';
-  String choice_A = '';
-  String choice_B = '';
-  _choice_Secection()
-  {
-
-  }
+  String display = 'You awake in your cabin, greeted by an alarm echoing through the room. The curtain that once obscured your small window pulls back automatically, revealing the pitch emptiness of space. You….';
+  String choice1 = 'Prepare for the day';
+  String choice2 = 'Go back to sleep';
+  String nextDisplayA = 'You throw on your engineer uniform and go prepare for your first day working abroad the U.S.S.  Azure Star.After you get ready you give your room a look over, ensuring you have everything you need to get around the ship.You leave your room to go meet Sera in the mess hall to grab something to eat before your shift begins. You both eat a sandwich and see eachother off as you go to start your shift. You arrive for your shift and clock in on time. Your boss gives you a rundown of how things work and directs you to a terminal, and explains this is where you receive orders for things that need to be fixed, then leaves to do other work.You…';
+  String nextChoice1A = 'open a rather easy sounding request';
+  String nextChoice2A = 'Pretend to work';
+  String nextDisplayB = 'You go back to sleep, but after what feels like minutes your phone goes off while someone is banging on your door, your friend comes to say you are late and the boss is pissed at the new hire being late. Sera tells you your shift starts soon and tosses you a sandwich as she goes to her bed on the opposite side of the room.You arrive for your shift and clock in, barely making it on time. Your boss gives you a rundown of how things work and directs you to a terminal, and explains this is where you receive orders for things that need to be fixed, then leaves to do other work.You…';
+  String nextChoice1B = 'open a rather easy sounding request';
+  String nextChoice2B = 'Pretend to work';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +31,15 @@ class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-
+                Text( display, style: TextStyle(color: Colors.black, fontSize: 20)),
                 TextButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                   ),
-                  child: Text('Prepare for the day', style: TextStyle(color: Colors.black, fontSize: 20)),
+                  child: Text(choice1, style: TextStyle(color: Colors.black, fontSize: 20)),
                   onPressed: () async {
                     await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => _choice_Secection()
+                        builder: (context) => SpaceChoice1(choice1: nextChoice1A, choice2: nextChoice2A, display: nextDisplayA,)
                     ),
                     );
                   },
@@ -46,22 +48,10 @@ class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                   ),
-                  child: Text('Gaze into the void of space', style: TextStyle(color: Colors.black, fontSize: 20)),
+                  child: Text(choice2, style: TextStyle(color: Colors.black, fontSize: 20)),
                   onPressed: () async {
                     await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => _choice_Secection()
-                    ),
-                    );
-                  },
-                ),
-                TextButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                  ),
-                  child: Text('Go back to sleep', style: TextStyle(color: Colors.black, fontSize: 20)),
-                  onPressed: () async {
-                    await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => _choice_Secection()
+                        builder: (context) => SpaceChoice1(choice1: nextChoice1B, choice2: nextChoice2B, display: nextDisplayB,)
                     ),
                     );
                   },
@@ -74,26 +64,7 @@ class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
   }
 }
 /*
-Start:
 
-You awake in your cabin, greeted by an alarm echoing through the room. The curtain that once obscured your small window pulls back automatically, revealing the pitch emptiness of space. You….
-Choice 1:
-A: Prepare for the day +2
-C: Go back to sleep -5
-
-A: You throw on your engineer uniform and go prepare for your first day working abroad the U.S.S.  Azure Star.
-B: You go back to sleep, but after what feels like minutes your phone goes off while someone is banging on your door, your friend comes to say you're late and the boss isn't going to be pissed, even if you’re the newest hire.
-
-After you get ready you give your room a look over, ensuring you have everything you need to get around the ship.
-
-If friend didn’t get you:
-You leave your room to go meet Sera in the mess hall to grab something to eat before your shift begins. You both eat a sandwich and see eachother off as you go to start your shift.
-Else:
-Sera tells you your shift starts soon and tosses you a sandwich as she goes to her bed on the opposite side of the room.
-
- Choice 2:
-You arrive for your shift and clock in, barely making it on time. Your boss gives you a rundown of how things work and directs you to a terminal, and explains this is where you receive orders for things that need to be fixed, then leaves to do other work.
-You…
 A: open a rather easy sounding request +2
 B: Pretend to work -2
 
