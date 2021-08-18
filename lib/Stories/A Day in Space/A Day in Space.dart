@@ -72,16 +72,13 @@ If Pretend to work:
 You fiddle with some small pieces of what look like scrap, but after a few moments sparks fly leaving your hands cut and burned.
 
 If A:
-You find a rather simple request, the cafeteria’s oven had stopped working. So you grab some tools and materials and get to work.
+You find a rather simple request, the cafeterias oven had stopped working. So you grab some tools and materials and get to work.
 Else B:
-You arrive at the infirmary and they treat your hands…
-If score > 0:
-Your hands are mostly fine but will need a few days to recover full use, having learned your lesson you work easy jobs, doing just enough to not get spaced.
-Else : Yous hands will recover, but you will never regain full use of them, with this you could work in the cafeteria or….
+You arrive at the infirmary and they treat your hands. After the doc treats your hands they mention how the items you damaged your hands with may cause health issues and to see them if you notice anything
 
 Choices for B else:
-A: cafeteria work
-B: ….
+A: back to work
+B: Something strange starts happening
 
 If A:
 You work in the cafeteria, doing simple work but your hands never truly recover. You always feel irritated and in pain when doing anything, and you think it may be spreading beyond your hands.

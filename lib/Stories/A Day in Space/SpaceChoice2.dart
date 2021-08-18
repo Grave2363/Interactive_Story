@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:interactive_story/Stories/A%20Day%20in%20Space/SpaceFinal.dart';
 class SpaceChoice2 extends StatefulWidget {
   final choice1 ;
   final choice2 ;
   final display ;
-  const SpaceChoice2({Key? key, this.choice1, this.choice2, this.display}) : super(key: key);
+  final res1;
+  final res2;
+  const SpaceChoice2({Key? key, this.choice1, this.choice2, this.display, this.res1, this.res2}) : super(key: key);
 
   @override
   _SpaceChoice2State createState() => _SpaceChoice2State();
 }
 
 class _SpaceChoice2State extends State<SpaceChoice2> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +34,7 @@ class _SpaceChoice2State extends State<SpaceChoice2> {
                   child: Text(widget.choice1, style: TextStyle(color: Colors.black, fontSize: 20)),
                   onPressed: () async {
                     await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => SpaceChoice2()
+                        builder: (context) => SpaceFinal(display: widget.res1,)
                     ),
                     );
                   },
@@ -44,7 +46,7 @@ class _SpaceChoice2State extends State<SpaceChoice2> {
                   child: Text(widget.choice2, style: TextStyle(color: Colors.black, fontSize: 20)),
                   onPressed: () async {
                     await Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => SpaceChoice2()
+                        builder: (context) => SpaceFinal(display: widget.res2,)
                     ),
                     );
                   },
