@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interactive_story/Stories/A%20Day%20in%20Space.dart';
+import 'package:interactive_story/Stories/A%20Day%20in%20Space/A%20Day%20in%20Space.dart';
 
 void main() {
   runApp(MyApp());

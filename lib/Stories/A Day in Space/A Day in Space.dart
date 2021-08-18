@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:interactive_story/Stories/A%20Day%20in%20Space/Choice_1_res/Choice_1_A.dart';
+import 'package:interactive_story/Stories/A%20Day%20in%20Space/Choice_1_res/Choice_1_C.dart';
+import 'package:interactive_story/Stories/A%20Day%20in%20Space/Choice_1_res/Choice__1__B.dart';
 
 class A_Day_in_Space extends StatefulWidget {
   const A_Day_in_Space({Key? key}) : super(key: key);
@@ -13,10 +16,6 @@ class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
   String choice_A = '';
   String choice_B = '';
   String choice_C = '';
-  _choice_made()
-  {
-    //todo
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +24,51 @@ class _A_Day_in_SpaceState extends State<A_Day_in_Space> {
         elevation: 0.0,
         title: Text('A Day in Space'),
       ),
-
+      body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                  ),
+                  child: Text('Prepare for the day', style: TextStyle(color: Colors.black, fontSize: 20)),
+                  onPressed: () async {
+                    await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Choice_1_A()
+                    ),
+                    );
+                  },
+                ),
+                TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                  ),
+                  child: Text('Gaze into the void of space', style: TextStyle(color: Colors.black, fontSize: 20)),
+                  onPressed: () async {
+                    await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Choice__1__B()
+                    ),
+                    );
+                  },
+                ),
+                TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                  ),
+                  child: Text('Go back to sleep', style: TextStyle(color: Colors.black, fontSize: 20)),
+                  onPressed: () async {
+                    await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Choice_1_C()
+                    ),
+                    );
+                  },
+                ),
+              ],
+            ),
+          )
+      ),
     );
   }
 }
