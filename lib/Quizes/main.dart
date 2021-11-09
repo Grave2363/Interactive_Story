@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:interactive_story/Stories/A%20Day%20in%20Space/A%20Day%20in%20Space.dart';
+
+import 'Quiz01/Quiz_01_Q1.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -33,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         elevation: 0.0,
-        title: Text('Interactive Stories'),
+        title: Text('Quiz Game'),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -44,10 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 ),
-                child: Text('A Day in Space', style: TextStyle(color: Colors.black, fontSize: 20)),
+                child: Text('Quiz 1', style: TextStyle(color: Colors.black, fontSize: 20)),
                 onPressed: () async {
                   await Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => A_Day_in_Space()
+                      builder: (context) => Quiz_01_Q1()
                   ),
                   );
                 },
